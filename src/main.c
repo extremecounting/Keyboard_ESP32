@@ -33,9 +33,19 @@ char input_3_chars[5] = {'k', 'l', 'm', 'n', 'o'};
 char input_4_chars[5] = {'p', 'q', 'r', 's', 't'};
 
 void app_main() {
-    /*gpio_config_t input_pin_config = {};
-    input_pin_config.intr_type = GPIO_INTR_POSEDGE;
-    input_pin_config.mode = GPIO_MODE_INPUT;
-    input_pin_config.pin_bit_mask = GPIO_NUM_*/
-    gpio_set_direction()
+    // Set input pins
+    gpio_set_direction(input_pin_1, GPIO_MODE_INPUT);
+    gpio_set_direction(input_pin_2, GPIO_MODE_INPUT);
+    gpio_set_direction(input_pin_3, GPIO_MODE_INPUT);
+    gpio_set_direction(input_pin_4, GPIO_MODE_INPUT);
+
+    // Set output pins
+    gpio_set_direction(output_pin_1, GPIO_MODE_OUTPUT);
+    gpio_set_direction(output_pin_2, GPIO_MODE_OUTPUT);
+    gpio_set_direction(output_pin_3, GPIO_MODE_OUTPUT);
+    gpio_set_direction(output_pin_4, GPIO_MODE_OUTPUT);
+    gpio_set_direction(output_pin_5, GPIO_MODE_OUTPUT);
+
+    while (1) {
+    }
 }
