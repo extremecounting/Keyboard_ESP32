@@ -7,7 +7,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/queue.h"
 #include "freertos/task.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 #define input_pin_1 GPIO_NUM_36
 #define input_pin_2 GPIO_NUM_34
@@ -33,11 +33,17 @@ char input_3_chars[5] = {'k', 'l', 'm', 'n', 'o'};
 char input_4_chars[5] = {'p', 'q', 'r', 's', 't'};
 
 void app_main() {
-    // Set input pins
+
+    // Initialize input pins
     gpio_set_direction(input_pin_1, GPIO_MODE_INPUT);
     gpio_set_direction(input_pin_2, GPIO_MODE_INPUT);
     gpio_set_direction(input_pin_3, GPIO_MODE_INPUT);
     gpio_set_direction(input_pin_4, GPIO_MODE_INPUT);
+
+    gpio_set_pull_mode(input_pin_1, GPIO_PULLDOWN_ONLY);
+    gpio_set_pull_mode(input_pin_2, GPIO_PULLDOWN_ONLY);
+    gpio_set_pull_mode(input_pin_3, GPIO_PULLDOWN_ONLY);
+    gpio_set_pull_mode(input_pin_4, GPIO_PULLDOWN_ONLY);
 
     // Set output pins
     gpio_set_direction(output_pin_1, GPIO_MODE_OUTPUT);
@@ -46,6 +52,14 @@ void app_main() {
     gpio_set_direction(output_pin_4, GPIO_MODE_OUTPUT);
     gpio_set_direction(output_pin_5, GPIO_MODE_OUTPUT);
 
+    
+
     while (1) {
+
     }
+}
+
+void set_pins(int state)
+{
+    
 }
